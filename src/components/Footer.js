@@ -30,7 +30,7 @@ const Footer = () => {
                 mb: 1,
               }}
             >
-              NightVibe Events
+              Fest2fun
             </Typography>
             <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
               Transformando la noche en experiencias inolvidables
@@ -43,7 +43,7 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
               <Typography sx={{ color: 'rgba(255,255,255,0.8)' }}>
-                📧 hola@nightvibe.com
+                📧 hola@fest2fun.com
               </Typography>
               <Typography sx={{ color: 'rgba(255,255,255,0.8)' }}>
                 📱 +34 600 123 456
@@ -71,7 +71,7 @@ const Footer = () => {
 
         <Box sx={{ mt: 6, pt: 4, borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center' }}>
           <Typography sx={{ color: 'rgba(255,255,255,0.6)' }}>
-            © 2026 NightVibe Events. Todos los derechos reservados.
+            © 2026 Fest2fun. Todos los derechos reservados.
           </Typography>
         </Box>
       </Box>
