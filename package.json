@@ -13,11 +13,15 @@
     "react-icons": "^5.2.1",
     "react-scripts": "5.0.1"
   },
+  "devDependencies": {
+    "webpack-bundle-analyzer": "^4.10.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "analyze": "node --max-old-space-size=4096 node_modules/.bin/react-scripts build && npx webpack-bundle-analyzer build/static/js/*.js"
   },
   "eslintConfig": {
     "extends": [

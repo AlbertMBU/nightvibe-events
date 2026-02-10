@@ -4,7 +4,7 @@ import {
   ConfirmationNumber,     // ✅ TICKET
   QrCodeScanner,         // ✅ QR
   BarChart,              // ✅ CHART
-  EditSquare             // ✅ ZONES
+  AccountBalance         // ✅ ZONAS (reemplazo EditSquare)
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import Carousel from './Carousel';
@@ -27,7 +27,7 @@ const Modules = () => {
       description: 'Datos en tiempo real sobre afluencia, demografía y comportamiento.'
     },
     {
-      icon: EditSquare,
+      icon: AccountBalance,
       title: 'Aforos por Zonas',
       description: 'Herramientas para control de aforo por zonas.'
     },
