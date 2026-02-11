@@ -38,7 +38,7 @@ const Modules = () => {
   ];
 
   return (
-    <Box sx={{ py: 16, px: { xs: 2, md: 4 } }}>
+    < Box id="modulos" sx={{ py: 16, px: { xs: 2, md: 4 } }}>
       <Box sx={{ maxWidth: 1200, mx: 'auto', textAlign: 'center', mb: 12 }}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}

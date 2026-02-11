@@ -31,10 +31,10 @@ const App = () => (
           <Routes>
             <Route path="/" element={
               <>
-                <Hero />
+                <Hero id="home" />
                 <Carousel />
-                <Modules />
-                <Sectors />
+                <Modules id="modulos" />
+                <Sectors id="sectores"/>
               </>
             } />
             <Route path="/modulos/invitaciones" element={<InvitacionesPage />} />

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Grid, Typography, Card, CardContent } from '@mui/material';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 const InvitacionesPage = () => {
   return (
@@ -33,7 +32,6 @@ const InvitacionesPage = () => {
           </Grid>
         </Grid>
       </Box>
-      <Footer />
     </>
   );
 };

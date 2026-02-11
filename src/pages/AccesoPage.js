@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography, Card, CardContent } from '@mui/material';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+// QUITA: import Footer from '../components/Footer';
 
 const AccesoPage = () => {
   return (
@@ -33,7 +33,7 @@ const AccesoPage = () => {
           </Grid>
         </Grid>
       </Box>
-      <Footer />
+      {/* QUITA <Footer /> */}
     </>
   );
 };
