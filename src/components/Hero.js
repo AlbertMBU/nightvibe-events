@@ -84,7 +84,7 @@ const Hero = () => {
             }}
             onClick={scrollToModules}
           >
-            Explora Módulos
+            Descubre nuestros Módulos
           </Button>
         </motion.div>
       </motion.div>

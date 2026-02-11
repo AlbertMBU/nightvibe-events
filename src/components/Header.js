@@ -20,12 +20,22 @@ const Header = () => {
     setOpenMenu(false);
   };
 
+  const getSectionName = (section) => {
+    const names = {
+      home: 'Home',
+      modulos: 'Módulos',
+      sectores: 'Sectores',
+      contacto: 'Contacto'
+    };
+    return names[section] || section;
+  };
+
   return (
     <AppBar
       position="fixed"
       sx={{
-        background: scrolled 
-          ? 'rgba(0,0,0,0.95)' 
+        background: scrolled
+          ? 'rgba(0,0,0,0.95)'
           : 'linear-gradient(180deg, rgba(0,0,0,0.9) 0%, transparent 100%)',
         backdropFilter: 'blur(20px)',
         boxShadow: scrolled ? 3 : 'none',
@@ -35,6 +45,7 @@ const Header = () => {
       elevation={0}
     >
       <Toolbar sx={{ justifyContent: 'space-between', px: { xs: 2, md: 4 } }}>
+        {/* Logo */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -53,12 +64,13 @@ const Header = () => {
             }}
             onClick={() => scrollToSection('home')}
           >
-            Fest2fun
+            Fest2.fun
           </Typography>
         </motion.div>
 
+        {/* Menú Desktop: Home, Módulos, Sectores, Contacto */}
         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
-          {['home', 'modulos', 'sectores'].map((section) => (
+          {['home', 'modulos', 'sectores', 'contacto'].map((section) => (
             <Button
               key={section}
               color="inherit"
@@ -82,37 +94,46 @@ const Header = () => {
               }}
               onClick={() => scrollToSection(section)}
             >
-              {section === 'home' ? 'Home' : section === 'modulos' ? 'Módulos' : 'Sectores'}
+              {getSectionName(section)}
             </Button>
           ))}
         </Box>
 
+        {/* Botón Menú Móvil */}
         <Box sx={{ display: { xs: 'block', md: 'none' } }}>
           <Button onClick={() => setOpenMenu(!openMenu)}>
-            Menu
+            ☰ Menu
           </Button>
         </Box>
       </Toolbar>
 
+      {/* Menú Móvil Dropdown */}
       {openMenu && (
-        <Box sx={{
-          display: { xs: 'block', md: 'none' },
-          background: 'rgba(0,0,0,0.95)',
-          backdropFilter: 'blur(20px)',
-          position: 'absolute',
-          top: '100%',
-          left: 0,
-          right: 0,
-          py: 2,
-        }}>
-          {['home', 'modulos', 'sectores'].map((section) => (
+        <Box
+          sx={{
+            display: { xs: 'block', md: 'none' },
+            background: 'rgba(0,0,0,0.95)',
+            backdropFilter: 'blur(20px)',
+            position: 'absolute',
+            top: '100%',
+            left: 0,
+            right: 0,
+            py: 2,
+          }}
+        >
+          {['home', 'modulos', 'sectores', 'contacto'].map((section) => (
             <Button
               key={section}
               fullWidth
-              sx={{ justifyContent: 'flex-start', my: 1, mx: 2 }}
+              sx={{ 
+                justifyContent: 'flex-start', 
+                my: 1, 
+                mx: 2,
+                fontSize: '1.1rem'
+              }}
               onClick={() => scrollToSection(section)}
             >
-              {section === 'home' ? 'Home' : section === 'modulos' ? 'Módulos' : 'Sectores'}
+              {getSectionName(section)}
             </Button>
           ))}
         </Box>

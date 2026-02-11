@@ -1,80 +1,46 @@
 import React from 'react';
-import { Box, Typography, Grid, IconButton } from '@mui/material';
-import { 
-  Facebook, 
-  Instagram, 
-  WhatsApp 
-} from '@mui/icons-material';
+import { Box, Typography, IconButton } from '@mui/material';
+import { WhatsApp, Facebook, Instagram } from '@mui/icons-material';
 
 const Footer = () => {
   return (
-    <Box
-      sx={{
-        py: 8,
-        px: { xs: 2, md: 4 },
-        background: 'linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(139,92,246,0.1) 100%)',
-        borderTop: '1px solid rgba(139,92,246,0.2)',
+    <Box 
+      id="contacto"  // ← SCROLL DEL HEADER LLEGA AL FINAL
+      sx={{ 
+        py: 4, 
+        background: 'linear-gradient(135deg, #000 0%, #1a0033 100%)',
+        textAlign: 'center',
+        borderTop: '1px solid rgba(139,92,246,0.3)'
       }}
     >
-      <Box sx={{ maxWidth: 1200, mx: 'auto' }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={4}>
-            <Typography
-              variant="h5"
-              sx={{
-                fontWeight: 900,
-                background: 'linear-gradient(45deg, #8B5CF6, #EC4899)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                mb: 1,
-              }}
-            >
-              Fest2fun
-            </Typography>
-            <Typography sx={{ color: 'rgba(255,255,255,0.7)' }}>
-              Transformando la noche en experiencias inolvidables
-            </Typography>
-          </Grid>
-          
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" sx={{ mb: 2, color: '#fff', fontWeight: 600 }}>
-              Contacto
-            </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              <Typography sx={{ color: 'rgba(255,255,255,0.8)' }}>
-                📧 hola@fest2fun.com
-              </Typography>
-              <Typography sx={{ color: 'rgba(255,255,255,0.8)' }}>
-                📱 +34 600 123 456
-              </Typography>
-            </Box>
-          </Grid>
-          
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" sx={{ mb: 2, color: '#fff', fontWeight: 600 }}>
-              Síguenos
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <IconButton sx={{ color: '#8B5CF6', '&:hover': { bgcolor: 'rgba(139,92,246,0.1)' } }}>
-                <Facebook />
-              </IconButton>
-              <IconButton sx={{ color: '#EC4899', '&:hover': { bgcolor: 'rgba(236,72,153,0.1)' } }}>
-                <Instagram />
-              </IconButton>
-              <IconButton sx={{ color: '#25D366', '&:hover': { bgcolor: 'rgba(37,211,102,0.1)' } }}>
-                <WhatsApp />
-              </IconButton>
-            </Box>
-          </Grid>
-        </Grid>
-
-        <Box sx={{ mt: 6, pt: 4, borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center' }}>
-          <Typography sx={{ color: 'rgba(255,255,255,0.6)' }}>
-            © 2026 Fest2fun. Todos los derechos reservados.
-          </Typography>
-        </Box>
+      <Typography sx={{ mb: 2, color: '#EC4899', fontWeight: 700 }}>
+        Fest2.fun experiencias inolvidables
+      </Typography>
+      
+      <Box sx={{ mb: 3 }}>
+        <Typography variant="body1" sx={{ mb: 1 }}>
+          📞 <a href="tel:+34666123456" style={{ color: '#8B5CF6' }}>+34 666 123 456</a>
+        </Typography>
+        <Typography variant="body1">
+          ✉️ <a href="mailto:info@fest2.fun" style={{ color: '#EC4899' }}>info@fest2.fun</a>
+        </Typography>
       </Box>
+
+      <Box sx={{ mb: 3 }}>
+        <IconButton href="https://wa.me/34666123456" target="_blank" size="large" sx={{ mx: 1, color: '#25D366' }}>
+          <WhatsApp fontSize="large" />
+        </IconButton>
+        <IconButton href="#" target="_blank" size="large" sx={{ mx: 1, color: '#4267B2' }}>
+          <Facebook fontSize="large" />
+        </IconButton>
+        <IconButton href="#" target="_blank" size="large" sx={{ mx: 1, color: '#E4405F' }}>
+          <Instagram fontSize="large" />
+        </IconButton>
+      </Box>
+
+      <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+        © 2026 Fest2.fun. Todos los derechos reservados.
+      </Typography>
     </Box>
   );
 };
