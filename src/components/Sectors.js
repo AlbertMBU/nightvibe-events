@@ -6,17 +6,17 @@ const sectors = [
   {
     title: 'Discotecas',
     description: 'Gestión completa para clubs nocturnos con alta rotación diaria.',
-    image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1547210841-2ceb0c5f0679?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Festivales',
     description: 'Escalabilidad desde un pequeño evento hasta festivales masivos.',
-    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Eventos Privados',
-    description: 'Soluciones premium para fiestas exclusivas y corporativas.',
-    image: 'https://images.unsplash.com/photo-1571896349840-e9e7359a42ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    description: 'Soluciones a medida para fiestas exclusivas, corporativas, culturales, convenciones, ferias, conferencias...',
+    image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&w=800&q=80'
   },
 ];
 
@@ -31,7 +31,7 @@ const Sectors = () => {
           transition={{ duration: 0.8 }}
         >
           <Typography variant="h2" sx={{ mb: 4, color: '#fff' }}>
-            Nuestros Sectores
+            Sectores de Aplicación
           </Typography>
           <Typography variant="h6" sx={{ color: 'rgba(255,255,255,0.8)', maxWidth: 600, mx: 'auto' }}>
             Adaptamos nuestra tecnología a cada tipo de evento para maximizar su éxito
