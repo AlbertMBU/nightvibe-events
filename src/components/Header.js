@@ -45,7 +45,6 @@ const Header = () => {
       elevation={0}
     >
       <Toolbar sx={{ justifyContent: 'space-between', px: { xs: 2, md: 4 } }}>
-        {/* Logo */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -68,7 +67,6 @@ const Header = () => {
           </Typography>
         </motion.div>
 
-        {/* Menú Desktop: Home, Módulos, Sectores, Contacto */}
         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
           {['home', 'modulos', 'sectores', 'contacto'].map((section) => (
             <Button
@@ -99,38 +97,27 @@ const Header = () => {
           ))}
         </Box>
 
-        {/* Botón Menú Móvil */}
         <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-          <Button onClick={() => setOpenMenu(!openMenu)}>
-            ☰ Menu
-          </Button>
+          <Button onClick={() => setOpenMenu(!openMenu)}>☰ Menu</Button>
         </Box>
       </Toolbar>
 
-      {/* Menú Móvil Dropdown */}
       {openMenu && (
-        <Box
-          sx={{
-            display: { xs: 'block', md: 'none' },
-            background: 'rgba(0,0,0,0.95)',
-            backdropFilter: 'blur(20px)',
-            position: 'absolute',
-            top: '100%',
-            left: 0,
-            right: 0,
-            py: 2,
-          }}
-        >
+        <Box sx={{
+          display: { xs: 'block', md: 'none' },
+          background: 'rgba(0,0,0,0.95)',
+          backdropFilter: 'blur(20px)',
+          position: 'absolute',
+          top: '100%',
+          left: 0,
+          right: 0,
+          py: 2,
+        }}>
           {['home', 'modulos', 'sectores', 'contacto'].map((section) => (
             <Button
               key={section}
               fullWidth
-              sx={{ 
-                justifyContent: 'flex-start', 
-                my: 1, 
-                mx: 2,
-                fontSize: '1.1rem'
-              }}
+              sx={{ justifyContent: 'flex-start', my: 1, mx: 2 }}
               onClick={() => scrollToSection(section)}
             >
               {getSectionName(section)}
