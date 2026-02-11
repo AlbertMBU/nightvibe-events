@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography, Card, CardContent } from '@mui/material';
-import Header from '../components/Header';
-// QUITA: import Footer from '../components/Footer';
+import Header from '../components/Header'; // QUITA: import Footer from '../components/Footer';
+import FlechasNav from '../components/FlechasNav';
 
 const AccesoPage = () => {
   return (
@@ -32,6 +32,7 @@ const AccesoPage = () => {
             </Card>
           </Grid>
         </Grid>
+        <FlechasNav /> {/* AGREGA FLECHAS DE NAVEGACIÓN */}
       </Box>
       {/* QUITA <Footer /> */}
     </>

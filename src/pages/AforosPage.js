@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography, Card, CardContent } from '@mui/material';
 import Header from '../components/Header';
+import FlechasNav from '../components/FlechasNav';
 
 const AforosPage = () => {
   return (
@@ -31,6 +32,7 @@ const AforosPage = () => {
             </Card>
           </Grid>
         </Grid>
+        <FlechasNav /> {/* AGREGA FLECHAS DE NAVEGACIÓN */}
       </Box>
     </>
   );
