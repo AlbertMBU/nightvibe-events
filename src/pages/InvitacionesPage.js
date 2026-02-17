@@ -85,7 +85,19 @@ const InvitacionesPage = () => {
                   <ListItem sx={{ p: 0.5 }}>
                     <CheckIcon sx={{ color: '#4caf50', mr: 1, fontSize: 20 }} />
                     <Typography sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem' }}>
-                      Crea paquetes de invitaciones por RRPP, por tipo, con donativo...
+                      Crea paquetes de invitaciones por RRPP, por tipo, por sponsor, con donativo...
+                    </Typography>
+                  </ListItem>
+                  <ListItem sx={{ p: 0.5 }}>
+                    <CheckIcon sx={{ color: '#4caf50', mr: 1, fontSize: 20 }} />
+                    <Typography sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem' }}>
+                      Genera un enlace para compartir las invitaciones
+                    </Typography>
+                  </ListItem>
+                  <ListItem sx={{ p: 0.5 }}>
+                    <CheckIcon sx={{ color: '#4caf50', mr: 1, fontSize: 20 }} />
+                    <Typography sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem' }}>
+                      Consulta las estadísticas de las invitaciones: quién las ha abierto, quién las ha descargado, quién las ha compartido...
                     </Typography>
                   </ListItem>
                 </List>
