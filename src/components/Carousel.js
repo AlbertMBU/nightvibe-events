@@ -1,24 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const clients = [
-  { 
-    name: 'Ibiza Club', 
-    logo: 'https://images.unsplash.com/photo-1571896349840-f9b4a8e9f4e8?w=200&h=60&fit=crop&crop=center' 
-  },
-  { 
-    name: 'Madrid Beats', 
-    logo: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&h=60&fit=crop&crop=center' 
-  },
-  { 
-    name: 'Barcelona Rave', 
-    logo: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=60&fit=crop&crop=center' 
-  },
+  { name: 'OFF SONAR', logo: '/logos/OFFSONAR_negro.png' },
+  { name: 'Hivernacle', logo: '/logos/hivernacle02.png' },
+  { name: 'Brunch Elektronik', logo: '/logos/BrunchElectronik_blanco.png' },
+  { name: 'Halloween Takeover', logo: '/logos/Halloween_Takeover_morado.png' },
 ];
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState({});
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,112 +20,104 @@ const Carousel = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleImageLoad = (logo) => {
+    setImageLoaded(prev => ({ ...prev, [logo]: true }));
+  };
+
+  const handleImageError = (logo) => {
+    setImageLoaded(prev => ({ ...prev, [logo]: false }));
+  };
+
+  const currentClient = clients[currentIndex];
+  const showName = !imageLoaded[currentClient.logo];
+
   return (
-    <Box
-      sx={{
-        py: 8,
-        background: 'linear-gradient(90deg, rgba(139,92,246,0.1) 0%, rgba(236,72,153,0.1) 100%)',
+    <Box sx={{ maxWidth: 1200, mx: 'auto', py: 6 }}>
+      <Typography variant="h5" align="center" sx={{ mb: 6, color: 'white', fontWeight: 700 }}>
+        Nuestros clientes confían en nosotros
+      </Typography>
+      
+      <Box sx={{ 
+        width: '100%', 
+        height: { xs: '140px', md: '180px' },
+        position: 'relative',
         overflow: 'hidden',
-      }}
-    >
-      <Box sx={{ maxWidth: 1200, mx: 'auto', px: 2 }}>
-        <Typography
-          variant="h6"
-          sx={{
-            textAlign: 'center',
-            mb: 6,
-            color: '#fff',
-            fontWeight: 600,
-            fontSize: '1.2rem',
-          }}
-        >
-          Nuestros clientes confían en nosotros para llevar sus eventos al siguiente nivel
-        </Typography>
-        
-        <Box sx={{ 
-          position: 'relative', 
-          height: 140,  // ← +40px altura contenedor
-          width: '100%',
-          overflow: 'hidden'
-        }}>
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <AnimatePresence mode="wait">
           <motion.div
-            animate={{ x: `-${currentIndex * 33.33}%` }}
-            transition={{ 
-              x: { 
-                type: 'spring', 
-                stiffness: 80,
-                damping: 20,
-                duration: 1.5
-              }
-            }}
+            key={currentIndex}
+            initial={{ x: '100%', opacity: 0 }}  // ← ENTRA DESDE DERECHA
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '-100%', opacity: 0 }}     // ← SALE POR IZQUIERDA
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
             style={{
-              display: 'flex',
-              width: '300%',
+              position: 'absolute',
+              width: { xs: '280px', md: '380px' },
               height: '100%',
+              mx: 'auto',
             }}
           >
-            {[...clients, ...clients].map((client, index) => (
-              <Box
-                key={`${client.name}-${index}`}
-                sx={{
-                  flex: '0 0 33.33%',
-                  height: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  opacity: index % 3 === currentIndex ? 1 : 0.4,
-                  transition: 'opacity 1s ease',
-                  filter: index % 3 === currentIndex ? 'none' : 'blur(2px)',
-                }}
-              >
-                <Box
-                  component="img"
-                  src={client.logo}
-                  alt={client.name}
-                  sx={{
-                    height: { xs: 70, sm: 85, md: 100 },  // ← MÁS GRANDES
+            <Box sx={{
+              width: '100%',
+              height: '100%',
+              borderRadius: 2,
+              background: 'rgba(255,255,255,0.03)',
+              backdropFilter: 'blur(10px)',
+              boxShadow: '0 8px 25px rgba(0,0,0,0.4)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              p: 2,
+            }}>
+              <Box sx={{ 
+                textAlign: 'center', 
+                width: '100%', 
+                height: '100%', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center', 
+                justifyContent: 'center' 
+              }}>
+                <img
+                  src={currentClient.logo}
+                  alt={currentClient.name}
+                  style={{
                     width: 'auto',
-                    maxWidth: '95%',  // ← Un poco más ancho
-                    maxHeight: '100%', // ← No se sale del contenedor
-                    filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.4))',  // ← Sombra más grande
-                    borderRadius: '16px',  // ← Bordes más redondeados
+                    height: 'auto',
+                    maxWidth: '260px',
+                    maxHeight: '100px',
+                    objectFit: 'contain',
+                    display: showName ? 'none' : 'block',
+                    margin: '0 auto',
                   }}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
+                  onLoad={() => handleImageLoad(currentClient.logo)}
+                  onError={() => handleImageError(currentClient.logo)}
                 />
-                <Box
-                  sx={{
-                    height: { xs: 70, sm: 85, md: 100 },  // ← MÁS GRANDES
-                    width: 220,  // ← Más ancho
-                    background: `linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #F59E0B 100%)`,
-                    borderRadius: '16px',
-                    display: 'none',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.4))',
-                  }}
-                >
-                  <Typography 
-                    variant="h5" 
-                    sx={{ 
-                      color: 'white', 
-                      fontWeight: 900,
-                      fontSize: { xs: '1rem', md: '1.3rem' }  // ← Texto más grande
+                
+                {showName && (
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: 'white',
+                      fontWeight: 700,
+                      fontSize: { xs: '1.1rem', md: '1.3rem' },
+                      mt: 1,
                     }}
                   >
-                    {client.name}
+                    {currentClient.name}
                   </Typography>
-                </Box>
+                )}
               </Box>
-            ))}
+            </Box>
           </motion.div>
-        </Box>
+        </AnimatePresence>
       </Box>
     </Box>
   );
 };
 
 export default Carousel;
-
