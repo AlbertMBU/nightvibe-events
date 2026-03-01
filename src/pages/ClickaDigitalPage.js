@@ -17,7 +17,7 @@ const ClickaDigitalPage = () => {
         </Typography>
         <Grid container spacing={4} sx={{ maxWidth: 1200, mx: 'auto' }}>
           <Grid item xs={12} md={6}>
-            <Card sx={{ height: 200 }}>
+            <Card sx={{ height: 'auto', minHeight: 200 }}>
               <CardContent sx={{ p: 4, textAlign: 'center' }}>
                 <Typography variant="h5" sx={{ mb: 3, color: 'white' }}>
                   Clicka digital
@@ -51,32 +51,32 @@ const ClickaDigitalPage = () => {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Card sx={{ height: 200 }}>
-              <CardContent sx={{ p: 4, textAlign: 'center' }}>
+            <Grid item xs={12} md={6}>
+            <Card sx={{ height: 'auto', minHeight: 200 }}>
+              <CardContent sx={{ p: 4 }}>
                 <Typography variant="h5" sx={{ mb: 3, color: 'white' }}>
                   Dashboard con asistencia por dias, horas...
                 </Typography>
                 <List sx={{ p: 0, m: 0 }}>
-                  <ListItem sx={{ p: 0.5, justifyContent: 'center' }}>
+                  <ListItem sx={{ p: 0.5 }}>
                     <CheckIcon sx={{ color: '#4caf50', mr: 1, fontSize: 20 }} />
                     <Typography sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem' }}>
                       Consulta el historial de asistencia de tus eventos anteriores
                     </Typography>
                   </ListItem>
-                  <ListItem sx={{ p: 0.5, justifyContent: 'center' }}>
+                  <ListItem sx={{ p: 0.5 }}>
                     <CheckIcon sx={{ color: '#4caf50', mr: 1, fontSize: 20 }} />
                     <Typography sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem' }}>
                       Descarga y consulta tu asistencia en cualquier momento
                     </Typography>
                   </ListItem>
-                  <ListItem sx={{ p: 0.5, justifyContent: 'center' }}>
+                  <ListItem sx={{ p: 0.5 }}>
                     <CheckIcon sx={{ color: '#4caf50', mr: 1, fontSize: 20 }} />
                     <Typography sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem' }}>
                       Análisis de flujo de personas en tu evento o local
                     </Typography>
                   </ListItem>
-                  <ListItem sx={{ p: 0.5, justifyContent: 'center' }}>
+                  <ListItem sx={{ p: 0.5 }}>
                     <CheckIcon sx={{ color: '#4caf50', mr: 1, fontSize: 20 }} />
                     <Typography sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem' }}>
                       Define estrategias de marketing basadas en la asistencia a tus eventos
@@ -84,7 +84,6 @@ const ClickaDigitalPage = () => {
                   </ListItem>
                 </List>
               </CardContent>
-
             </Card>
           </Grid>
         </Grid>
