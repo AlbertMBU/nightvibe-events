@@ -61,7 +61,8 @@ const Hero = () => {
             color: 'rgba(255,255,255,0.9)',
           }}
         >
-          Soluciones para eventos, discotecas, festivales y +
+          Soluciones para eventos, discotecas, festivales y +<br /> 
+          Sin obligaciones, sin ataduras, sin COMISIONES
         </Typography>
 
         <motion.div

@@ -34,7 +34,7 @@ const Carousel = () => {
   return (
     <Box sx={{ maxWidth: 1200, mx: 'auto', py: 6 }}>
       <Typography variant="h5" align="center" sx={{ mb: 6, color: 'white', fontWeight: 700 }}>
-        Nuestros clientes confían en nosotros
+        Clientes que confían en nosotros
       </Typography>
       
       <Box sx={{ 
