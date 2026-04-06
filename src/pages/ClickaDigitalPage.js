@@ -26,7 +26,7 @@ const ClickaDigitalPage = () => {
                   <ListItem sx={{ p: 0.5, justifyContent: 'center' }}>
                     <CheckIcon sx={{ color: '#4caf50', mr: 1, fontSize: 20 }} />
                     <Typography sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem' }}>
-                      Define tus accesos y salidas
+                      Define tus entradas y salidas
                     </Typography>
                   </ListItem>
                   <ListItem sx={{ p: 0.5, justifyContent: 'center' }}>
